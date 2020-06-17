@@ -8,3 +8,6 @@ for key in name bio location blog
 do
     grep $key userdata.txt | awk -F'"' '{print $4}'
 done
+
+
+# name 輸出後下面會空一行，因為搜尋到了"twitter_username": null,
