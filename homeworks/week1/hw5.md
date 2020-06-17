@@ -7,9 +7,14 @@
 後端使用的語言則有 PHP、Python、Ruby on Rails 等等多種，搭配資料庫儲存資料，由後端程式進行運算。
 
 
-## 假設我今天去 Google 首頁搜尋框打上：JavaScri[t 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
+## 假設我今天去 Google 首頁搜尋框打上：JavaScript 並且按下 Enter，請說出從這一刻開始到我看到搜尋結果為止發生在背後的事情。
 
-鍵入 JavaScript 之後，前端接收資料並傳至 Google Server （後端）由 Google 的自動巡檢程式進行運算，於資料庫抓出關鍵字後建立搜尋索引，再回傳至前端依框架在瀏覽器顯示
+1. 鍵入 JavaScript 並且按下 Enter。
+2. 瀏覽器接收到 request 後，向 Google Server 後端進行三向交握以確保溝通管道順暢。
+3. 將你要搜尋 JavaScript 這個要求傳送至 Google Server。
+4. Google 的自動巡檢程式進行運算，於資料庫抓出關鍵字後建立搜尋索引。
+5. 將索引回傳至前端依框架顯示，建立成網站。
+6. DNS 再回傳該索引的IP位址至瀏覽器供你瀏覽。
 
 ## 請列舉出 3 個「課程沒有提到」的 command line 指令並且說明功用
 
