@@ -1,5 +1,4 @@
 const request = require('request');
-const process = require('process');
 
 function list() {
   request(
@@ -11,7 +10,7 @@ function list() {
       // 錯誤處理
       const books = JSON.parse(body);
       for (let i = 0; i < books.length; i += 1) {
-        return console.log(`${books[i].id} ${books[i].name}`);
+        console.log(`${books[i].id} ${books[i].name}`);
       }
     },
   );
@@ -31,18 +30,22 @@ function read(id) {
 }
 
 function deleteBook(id) {
-  request.delete(
+  request(
     `https://lidemy-book-store.herokuapp.com/books/${id}`,
     (error, response, body) => {
       const books = JSON.parse(body);
-      console.log(books.status);
-      if (books.status >= 400 || books.length === undefined) {
-        return console.log('Failed to delete!');
+      if (books.status >= 400 || JSON.stringify(books) === '{}') {
+        return console.log('找不到東西內');
       }
-      if (error) {
-        return console.log('Failed to delete!', error);
-      }
-      return console.log('Deleted successfully!');
+      request.delete(
+        `https://lidemy-book-store.herokuapp.com/books/${id}`,
+        () => {
+          if (error) {
+            return console.log('Failed to delete!', error);
+          }
+          return console.log('Deleted successfully!');
+        },
+      );
     },
   );
 }
