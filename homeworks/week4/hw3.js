@@ -1,5 +1,4 @@
 const request = require('request');
-const process = require('process');
 
 request(
   `https://restcountries.eu/rest/v2/name/${process.argv[2]}`,
@@ -9,7 +8,7 @@ request(
       return console.log('找不到國家資訊');
     }
     for (let i = 0; i < country.length; i += 1) {
-      return console.log(
+      console.log(
         `============
 國家：${country[i].name} 
 首都：${country[i].capital}

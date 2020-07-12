@@ -23,21 +23,21 @@ API 是以抽象的方式來定義一個介面，並不涉及實作，代表著�
 Base URL: <平台網址>
 回傳所有餐廳資料：
   Method: GET
-  Path: /restaurant
-  Request: <平台網址>/restaurant
+  Path: /restaurants
+  Request: <平台網址>/restaurants
 回傳單一餐廳資料：
   Method: GET
-  Path: /restaurant/:id
-  Request: <平台網址>/restaurant/3
+  Path: /restaurants/:id
+  Request: <平台網址>/restaurants/3
 刪除餐廳：
   Method: DELETE
-  Path: /restaurant/:id
-  Request: <平台網址>/restaurant/3
+  Path: /restaurants/:id
+  Request: <平台網址>/restaurants/3
 新增餐廳：
   Method: POST
-  Path: /restaurant
+  Path: /restaurants
   Parameter: name=餐廳名稱
 更改餐廳：
   Method: PATCH
-  Path: /restaurant/:id
+  Path: /restaurants/:id
   Parameter: name=餐廳名稱
