@@ -11,10 +11,17 @@
       body {
         font-family: Microsoft JhengHei;
       }
+
+      .wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0px 12px;
+      }
+
+
   	  .navbar{
   	    box-shadow: -.14px -1.4px 6px 0 #97a2a0
   	  }
-
   	  .navbar .wrapper {
   	  	display: flex;
   	  	justify-content: space-between; /* 往左右兩邊推開 */
@@ -22,12 +29,6 @@
   	  	padding: 0px 20px;
   	    height: 84px;
   	  	background: white;
-
-  	  }
-  	  .wrapper {
-  	  	max-width: 1280px;
-  	  	margin: 0 auto;
-  	  	padding: 0px 12px;
   	  }
   	  .navbar__site-name {
   	  	color: #489846;
@@ -60,30 +61,7 @@
   	  	padding: 12px 24px;
   	  }
 
-  	  @media(max-width: 812px) {
-
-  	  	.navbar .wrapper {
-  	  	  height: 120px;
-  	  	  flex-direction: column;
-  	  	  justify-content: space-between;
-  	  	  padding: 0px;
-  	  	}
-  	  	.navbar__list {
-  	  	  display: flex;
-  	  	  width: 100%;
-  	  	}
-  	  	.navbar__list li{
-          flex: 1;
-          margin-left: 0;
-          text-align: center;
-  	  	}
-  	  	.navbar__site-name {
-  	  	  margin-top: 10px;
-  	  	}
-        .section__comments {
-          flex-direction: column;
-        }
-  	  }
+  	  
   	  .banner {
   	  	position: relative;
   	  	margin: 0px;
@@ -112,15 +90,14 @@
   	  	left: 50%;
   	  	transform: translate(-50%, -50%);
   	  }
-
       h2 {
       	margin: 0;
       }
 
+
   	  .section {
   	  	text-align: center;
   	  	margin-top: 80px;
-
   	  }
   	  .section__title {
   	  	display: inline-block;
@@ -161,56 +138,54 @@
   	  .section__images img{
         width: 100%;
   	  }
-    .comment__author {
 
-    }
-  	.comment__avatar {
-      position: relative;
-  	  object-fit: contain;
-	  }
-    .comment__avatar img {
-      position: relative;
-      width: 105px;
-      height: 105px;
-      align-items: center;
-      margin-top: -20%;
-    }
-    .resname {
-      position: relative;
-      margin-top: -50%;
-    }
-    .comment {
-      border-radius: 5px;
-      box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
-      border: solid 1px #c7e5ec;
-      display: inline-block;
-      margin: 45px 8px;
-      font-size: 16px;
-    }
-    .response {
-      padding: 20px;
-      letter-spacing: 0.14px;
-      text-align: center; 
-      position: relative;
-    }
-    .section__comments {
-      display: flex;
-    }
-	  .footer__top {
-	  	background: #e8efee;
-	  	padding: 32px;
-	  	color: #484848;
-	  	width: 100%;
 
-	  }
-	  .footer__bottom {
-	  	background: #35564b;
-	  	color: white;
-	  	padding: 12px 0px;
-	  	text-align: center;
-	  	font-size: 16px;
-	  	border: 100%;
-	  }
+  	  .comment__avatar {
+        position: relative;
+  	    object-fit: contain;
+	    }
+      .comment__avatar img {
+        position: relative;
+        width: 105px;
+        height: 105px;
+        align-items: center;
+        margin-top: -20%;
+      }
+      .resname {
+        position: relative;
+        margin-top: -50%;
+      }
+      .comment {
+        border-radius: 5px;
+        box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+        border: solid 1px #c7e5ec;
+        display: inline-block;
+        margin: 45px 8px;
+        font-size: 16px;
+      }
+      .response {
+        padding: 20px;
+        letter-spacing: 0.14px;
+        text-align: center; 
+        position: relative;
+      }
+      .section__comments {
+        display: flex;
+      }
+	    .footer__top {
+	    	background: #e8efee;
+	  	  padding: 32px;
+	  	  color: #484848;
+	  	  width: 100%;
+      }
+	    .footer__bottom {
+	    	background: #35564b;
+	  	  color: white;
+	  	  padding: 12px 0px;
+	  	  text-align: center;
+	  	  font-size: 16px;
+	  	  border: 100%;
+	    }
 
   	  @media(max-width: 688px){
   	  	.button {
@@ -219,8 +194,31 @@
   	  	.navbar__list {
   	  	  font-size: 15px;
   	  	}
-
   	  }
+      @media(max-width: 812px) {
+
+        .navbar .wrapper {
+          height: 120px;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 0px;
+        }
+        .navbar__list {
+          display: flex;
+          width: 100%;
+        }
+        .navbar__list li{
+          flex: 1;
+          margin-left: 0;
+          text-align: center;
+        }
+        .navbar__site-name {
+          margin-top: 10px;
+        }
+        .section__comments {
+          flex-direction: column;
+        }
+      }
     </style>
 
   </head>
@@ -299,10 +297,9 @@
               </div>
               <p class="response">
                 我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!
-              </p>
+              </p>  
             </div>
   	  	  </div>
-  	  	  
   	  	</section>
   	  </div>
   	  <div class="wrapper">
@@ -311,7 +308,6 @@
   	  	  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.002890183707!2d121.5623502150063!3d25.03397598397251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q61N-iZnw!5e0!3m2!1szh-TW!2stw!4v1595421400952!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
   	  	</section>
   	  </div>
-
   	  <footer class="footer__top">
   	  	<div class="wrapper">
   	  	  <div class="footer__info">
@@ -330,12 +326,10 @@
   	  	  </div>
   	  	  <div class="footer__social"></div>
   	  	</div>
-  	  	
   	  </footer>
   	  <footer class="footer__bottom">
   	  	Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
   	  </footer>
   	</div>
-   
   </body>
 </html>
