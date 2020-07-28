@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>咬一口廚房</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <meta name ="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+  	  .navbar{
+  	    box-shadow: -.14px -1.4px 6px 0 #97a2a0
+  	  }
+
+  	  .navbar .wrapper {
+  	  	display: flex;
+  	  	justify-content: space-between; /* 往左右兩邊推開 */
+  	  	align-items: center; /* 讓垂直置中 */
+  	  	padding: 0px 20px;
+  	    height: 84px;
+  	  	background: white;
+
+  	  }
+  	  .wrapper {
+  	  	max-width: 1280px;
+  	  	margin: 0 auto;
+  	  	padding: 0px 12px;
+  	  }
+  	  .navbar__site-name {
+  	  	color: #489846;
+  	  	font-size: 36px;
+  	  }
+  	  .navbar__list {
+  	  	list-style: none;
+  	  	margin: 0;
+  	  	padding: 0;
+  	  	display: flex;
+  	  	font-size: 18px;
+  	  }
+  	  .navbar__list li {
+  	  	margin: 12px;
+        border-radius: 8px;
+        transition: background 0.2s;	
+  	  }
+  	  .navbar__list li.active, 
+  	  .navbar__list li:hover  {
+  	  	background: #ff7286;
+  	  }
+  	  .navbar__list li.active a, 
+  	  .navbar__list li:hover a{
+  	  	color: white;
+  	  }
+  	  .navbar__list li a {
+  	  	display: block;
+  	  	text-decoration: none;
+  	  	color: black;
+  	  	padding: 12px 24px;
+  	  }
+
+  	  @media(max-width: 812px) {
+
+  	  	.navbar .wrapper {
+  	  	  height: 120px;
+  	  	  flex-direction: column;
+  	  	  justify-content: space-between;
+  	  	  padding: 0px;
+  	  	}
+  	  	.navbar__list {
+  	  	  display: flex;
+  	  	  width: 100%;
+  	  	}
+  	  	.navbar__list li{
+          flex: 1;
+          margin-left: 0;
+          text-align: center;
+  	  	}
+  	  	.navbar__site-name {
+  	  	  margin-top: 10px;
+  	  	}
+  	  }
+  	  .banner {
+  	  	position: relative;
+  	  	margin: 0px;
+  	  	width: 100%;
+        height: 580px;
+  	  	background: url(bg.jpg) center/cover no-repeat;
+  	  }
+  	  .banner:after {
+  	  	content: '';
+  	  	position: absolute;
+  	  	background: rgba(0, 0, 0, 0.2);
+  	  	top: 0;
+  	  	left: 0;
+  	  	right: 0;
+  	  	bottom: 0;
+  	  }
+  	  .banner h1 {
+  	  	font-size: 60px;
+  	  	
+  	  	display: inline-block;
+  	  	position: relative;
+  	  	margin: 0;
+  	  	color: white;
+  	  	z-index: 2;
+  	  	top: 50%;
+  	  	left: 50%;
+  	  	transform: translate(-50%, -50%);
+  	  }
+
+      h2 {
+      	margin: 0;
+      }
+
+  	  .section {
+  	  	text-align: center;
+  	  	margin-top: 80px;
+
+  	  }
+  	  .section__title {
+  	  	display: inline-block;
+  	  	font-size: 36px;
+  	  	border-left: solid 15px #a3dea2;
+  	  	padding-left: 16px;
+  	  	margin-bottom: 36px;
+  	  }
+  	  .section__desciption {
+  	  	font-size: 16px;
+  	  	line-height: 2em;
+  	  }
+  	  .button {
+  	  	display: inline-block;
+  	  	padding: 60px 80px;
+  	  	font-size: 36px;
+  	  	color: #3e613d;
+  	  	border-radius: 10px;
+  	  	margin: 84px 12px;
+  	  	cursor: pointer;
+  	  	transition: transform 0.2s;	
+  	  }
+  	  .button:hover {
+  	  	transform: scale(1.2);
+  	  }
+      .order {
+        background: #a8e8e1;
+      }
+  	  .query {
+  	  	background: #f9f9b5;
+  	  }
+  	  .section__images {
+  	  	display: flex;
+  	  }
+  	  .section__images div {
+        width: 25%;
+  	  }
+  	  .section__images img{
+        width: 100%;
+  	  }
+
+  	  .response {
+        font-family: MicrosoftJhengHei;
+        padding: 39px;
+		    font-size: 16px;
+	      letter-spacing: 0.14px;
+		    text-align: center;
+		    color: #000000;
+		    border-radius: 5px;
+        box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+        border: solid 1px #c7e5ec;
+        background-color: #ffffff;
+  	  }
+  	.comment__avatar {
+      position: relative;
+  		width: 105px;
+      height: 105px;
+  	  object-fit: contain;
+	  }
+    .comment__avatar img {
+      position: relative;
+      top: -50%;
+    }
+    .comment {
+      border-radius: 5px;
+      box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+      border: solid 1px #c7e5ec;
+      height: 205px;
+    }
+	  .footer__top {
+	  	background: #e8efee;
+	  	padding: 32px;
+	  	color: #484848;
+	  	width: 100%;
+
+	  }
+	  .footer__bottom {
+	  	background: #35564b;
+	  	color: white;
+	  	padding: 12px 0px;
+	  	text-align: center;
+	  	font-size: 16px;
+	  	border: 100%;
+	  }
+
+  	  @media(max-width: 688px){
+  	  	.button {
+  	  	  margin: 12px 12px;
+  	  	}
+  	  	.navbar__list {
+  	  	  font-size: 15px;
+  	  	}
+  	  }
+    </style>
+
+  </head>
+  
+  <body>
+  	<nav class="navbar">
+  	  <div class="wrapper">
+  	  <div class="navbar__site-name">
+  	  	Just A Bite!
+  	  </div>
+  	  <ul class="navbar__list">
+  	  	<li class="active"><a href="#">抽個大獎</a></li>
+  	  	<li><a href="#">我要點餐</a></li>
+  	  	<li><a href="#">查詢訂單</a></li>
+  	  	<li><a href="#">常見問題</a></li>
+  	  </ul>
+  	  </div>
+  	</nav>
+  	<section class="banner">
+  	  <h1>咬一口廚房</h1>
+  	</section>
+  	<div class="wrapper">
+  	  <section class="section">
+  	  	<h2 class="section__title">
+  	  		當輕食之風盛起
+  	  	</h2>
+  	  	<p class="section__desciption">
+  	  		由於現代人生活忙碌，常以外食為主，當高糖、高鹽、高油成為人們的日常，會導致慢性疾病與肥胖的機率大增。
+  	  		<br>
+  	  		我們定期走訪農田，選用最天然、營養的食材，以簡單的烹調方式處理，最大化忠實呈現食材原本的鮮味。
+  	  		<br>
+  	  		咬一口不只賣餐點，我們希望能夠讓大家愛上料理的魅力，餐館特意打造全開放式廚房，烹調透明化，也不定時舉辦美食廚房DIY，讓大家體驗不需要過多調味，就能擁有千變萬化的食物口感。
+  	  	</p>
+  	  	<div class="buttoms">
+  	  		<div class="button order">我要點餐</div>
+  	  		<div class="button query">查詢訂單</div>
+  	  	</div>
+  	  </section>
+  	  <section class="section">
+  	  	<h2 class="section__title">
+  	  		Menu 搶先看
+  	  	</h2>
+  	  	<div class="section__images">
+  	  	  <div><img src="f-001.png" /></div>
+  	  	  <div><img src="f-002.png" /></div>
+  	  	  <div><img src="f-001.png" /></div>
+  	  	  <div><img src="f-002.png" /></div>
+  	  	</div>
+  	  </section>
+  	  <div class="wrapper">
+  	  	<section class="section">
+  	  	  <h2 class="section__title">吃過都說好</h2>
+  	  	  <div class="section__comments">
+            <div class="comment">
+              <img src="avatar.png" class="comment__avatar">
+            <p class="res-name">國父桑</p>
+            <p class="response">
+            我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!
+          </p>
+            </div>
+  	  	  	
+  	  	  </div>
+  	  	  
+  	  	</section>
+  	  </div>
+  	  <div class="wrapper">
+  	  	<section class="section">
+  	  	  <h2 class="section__title">我們在哪裡</h2>	
+  	  	  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.002890183707!2d121.5623502150063!3d25.03397598397251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e1f%3A0x1206bcf082fd10a6!2zMTEw5Y-w5YyX5biC5L-h576p5Y2A5L-h576p6Lev5LqU5q61N-iZnw!5e0!3m2!1szh-TW!2stw!4v1595421400952!5m2!1szh-TW!2stw" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  	  	</section>
+  	  </div>
+
+  	  <footer class="footer__top">
+  	  	<div class="wrapper">
+  	  	  <div class="footer__info">
+  	  	  	<p>
+  	  	  	  餐館地址: 天上地下天堂路三分之一里六段520號
+  	  	  	  <br>
+  	  	  	  <br>
+  	  	  	  訂位專線：02-1314-5566
+  	  	  	  <br>
+  	  	  	  <br>
+  	  	  	  營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息
+  	  	  	  <br>
+  	  	  	  <br>
+  	  	  	  email：service@justabite.com.tw
+  	  	  	</p>
+  	  	  </div>
+  	  	  <div class="footer__social"></div>
+  	  	</div>
+  	  	
+  	  </footer>
+  	  <footer class="footer__bottom">
+  	  	Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有
+  	  </footer>
+  	</div>
+   
+  </body>
+</html>
