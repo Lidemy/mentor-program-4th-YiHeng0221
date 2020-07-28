@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
     <meta name ="viewport" content="width=device-width, initial-scale=1" />
     <style>
+      body {
+        font-family: Microsoft JhengHei;
+      }
   	  .navbar{
   	    box-shadow: -.14px -1.4px 6px 0 #97a2a0
   	  }
@@ -77,6 +80,9 @@
   	  	.navbar__site-name {
   	  	  margin-top: 10px;
   	  	}
+        .section__comments {
+          flex-direction: column;
+        }
   	  }
   	  .banner {
   	  	position: relative;
@@ -155,34 +161,40 @@
   	  .section__images img{
         width: 100%;
   	  }
+    .comment__author {
 
-  	  .response {
-        font-family: MicrosoftJhengHei;
-        padding: 39px;
-		    font-size: 16px;
-	      letter-spacing: 0.14px;
-		    text-align: center;
-		    color: #000000;
-		    border-radius: 5px;
-        box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
-        border: solid 1px #c7e5ec;
-        background-color: #ffffff;
-  	  }
+    }
   	.comment__avatar {
       position: relative;
-  		width: 105px;
-      height: 105px;
   	  object-fit: contain;
 	  }
     .comment__avatar img {
       position: relative;
-      top: -50%;
+      width: 105px;
+      height: 105px;
+      align-items: center;
+      margin-top: -20%;
+    }
+    .resname {
+      position: relative;
+      margin-top: -50%;
     }
     .comment {
       border-radius: 5px;
       box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
       border: solid 1px #c7e5ec;
-      height: 205px;
+      display: inline-block;
+      margin: 45px 8px;
+      font-size: 16px;
+    }
+    .response {
+      padding: 20px;
+      letter-spacing: 0.14px;
+      text-align: center; 
+      position: relative;
+    }
+    .section__comments {
+      display: flex;
     }
 	  .footer__top {
 	  	background: #e8efee;
@@ -207,6 +219,7 @@
   	  	.navbar__list {
   	  	  font-size: 15px;
   	  	}
+
   	  }
     </style>
 
@@ -262,13 +275,32 @@
   	  	  <h2 class="section__title">吃過都說好</h2>
   	  	  <div class="section__comments">
             <div class="comment">
-              <img src="avatar.png" class="comment__avatar">
-            <p class="res-name">國父桑</p>
-            <p class="response">
-            我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!
-          </p>
+              <div class="comment__author">
+                <div class="comment__avatar"><img src="avatar.png" /></div>
+                <p class="res-name">國父桑</p>
+              </div>
+              <p class="response">
+                我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!
+              </p>
             </div>
-  	  	  	
+  	  	  	<div class="comment">
+              <div class="comment__author">
+                <div class="comment__avatar"><img src="avatar.png" /></div>
+                <p class="res-name">國父桑</p>
+              </div>
+              <p class="response">
+                我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!
+              </p>
+            </div>
+            <div class="comment">
+              <div class="comment__author">
+                <div class="comment__avatar"><img src="avatar.png" /></div>
+                <p class="res-name">國父桑</p>
+              </div>
+              <p class="response">
+                我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!
+              </p>
+            </div>
   	  	  </div>
   	  	  
   	  	</section>
