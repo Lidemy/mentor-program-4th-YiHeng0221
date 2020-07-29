@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>新拖延運動報名表單</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <style>
+      body {
+        background: whitesmoke;
+      }
+      .wrapper {
+        max-width: 645px;  
+        background: white;
+        margin: 10% auto;
+        box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+        border-top: solid 8px #fad312;
+        padding: 64px 32px;
+        font-family:Microsoft JhengHei;
+      }
+      .sheet__footer {
+        margin: 0px auto;
+        color: #999999;
+        font-size: 13px;
+        text-align: center;
+        background: #000000;
+        padding: 24px;
+        width: 100%;
+      }
+      .sheet {
+        margin-bottom: 50px;
+        font-size: 20px;
+      }
+      .sheet__important {
+        color: #e74149;
+        font-size: 16px;
+        display: inline-block;
+      }
+      .sheet__content {
+        color: #000000;
+        font-size: 14px;
+        margin-top: 25px;
+        display: block;
+      }
+      .sheet__button {
+        background: #fad312;
+        color: black;
+        font-size: 15px;
+        padding: 12px 32px;
+        margin-top: 48px;
+        border: none;
+        border-radius: 4px;
+        width: 30px;
+      }
+    </style>  
+
+  </head>
+  
+  <body>
+    <div class="wrapper">
+      <div class="sheet__title">
+        <h1>新拖延運動報名表單</h1>
+      </div>
+      <div class="sheet sheet__content">
+        <br>
+        活動日期：2020/12/10 ~ 2020/12/11          
+        <br><br>
+        活動地點：台北市大安區新生南路二段1號
+      </div>
+      <div class="sheet sheet__important">* 必填</div>
+      <div class="sheet sheet__nickname">
+        暱稱<p class="sheet__important">*</p>
+        <input class="sheet__content" type="text" placeholder="您的回答">
+      </div>
+      <div class="sheet sheet__email">
+        電子郵件<p class="sheet__important">*</p>
+        <input class="sheet__content" type="text" placeholder="您的電子郵件">
+      </div>
+      <div class="sheet sheet__nuber">
+        手機號碼<p class="sheet__important">*</p>
+        <input class="sheet__content" type="text" placeholder="您的手機號碼">
+      </div>
+      <div class="sheet sheet__type">
+        報名類型<p class="sheet__important">*</p>
+        <div class="sheet__content">
+          <input type="radio" name="known"><label for="bed">躺在床上用想像力實作</label><br><br><br>
+          <input type="radio" name="known"><label for="floor">趴在地上滑手機找現成的</label>
+        </div>
+          
+      </div>
+      <div class="sheet sheet__known">
+        怎麼知道這個活動的？<p class="sheet__important">*</p>
+        <input class="sheet__content" type="text" placeholder="您的回答">
+      </div>
+      <div class="sheet sheet__other">
+        其他
+        <div class="sheet__content">
+          對活動的一些建議
+        </div>
+        <input class="sheet__content" type="text" placeholder="您的回答">
+      </div>
+      <div class="sheet sheet__button">
+        提交
+      </div>
+      <div class="sheet__content">
+        請勿透過表單送出您的密碼。
+      </div>
+    </div>
+  </div>
+	<footer>
+    <div class="sheet__footer">
+      © 2020 © Copyright. All rights Reserved.
+    </div>
+  </footer>
+    
+  </body>
+</html>
