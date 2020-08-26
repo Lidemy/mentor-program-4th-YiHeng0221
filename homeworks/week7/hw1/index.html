@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>新拖延運動報名表單</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <style>
+      body {
+        background: whitesmoke;
+      }
+
+      footer {
+        background: black;
+        color: #999999;
+        font-size: 12px;
+        text-align: center;
+        padding: 24px 12px;
+      }
+
+      .wrapped {
+        max-width: 645px;
+        background: white;
+        margin: 10% auto;
+        box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+        border-top: solid 8px #fad312;
+        padding: 10px 10px;
+        font-family: MicrosoftJhengHei;
+      }
+
+      .header {
+        margin-top: -20px;
+        margin-bottom: 35px;
+      }
+
+      .desc {
+        line-height: 2em;
+        margin-bottom:20px;
+        font-size: 14px;
+      }
+
+      .item {
+        margin: 50px 0px;  
+      }
+
+      .subtitle {
+        font-size: 20px;
+        margin-bottom: 25px;
+      }
+
+      .remind {
+        color: #e74149;
+        font-size: 16px;  
+        margin-bottom: 25px;
+      }
+
+      .radio {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 50px;
+      }
+
+      .required .subtitle:after{
+        content: '*';
+        font-size: 20px;
+        margin-bottom: 25px;
+        color: #e74149;
+        font-size: 16px;  
+      }
+
+      .submit {
+        border-radius: 3px;
+        background-color: #fad312;
+        padding: 10px 30px;
+        border: none;
+      }
+
+      .errorMessage {
+        color: #e74149;
+        margin-top: 4px;
+        font-size: 16px;  
+        margin-bottom: 25px;
+      }
+
+      .hide .errorMessage {
+        opacity:0;
+        /*透明度設 0，來避免版型更動*/
+        /*用visiability: hidden;*/
+        /*用 position: absolute; 來固定位置*/
+
+      }
+    </style>  
+  </head>
+  
+  <body>
+    <div class="wrapped">
+      <form class="sheet">
+        <div class="header">
+          <h1>新拖延運動報名表單</h1>
+        </div>
+
+        <div class="desc">
+          活動日期：2020/12/10 ~ 2020/12/11
+          <br>
+          活動地點：台北市大安區新生南路二段1號
+        </div>
+
+        <div class="remind">
+          * 必填
+        </div>
+
+        <div class="required">
+
+          <div class="item haveTo hide">
+            <div class="subtitle">暱稱</div> 
+            <div class="answer">
+              <input type="text" value="" placeholder="您的暱稱">
+            </div>
+            <div class="errorMessage hide">請輸入暱稱</div>
+          </div>
+
+          <div class="item haveTo hide">
+            <div class="subtitle">電子郵件</div> 
+            <div class="answer">
+              <input  type="text" value="" placeholder="您的電子郵件">
+            </div>
+            <div class="errorMessage hide">請輸入電子郵件</div>
+          </div>
+          
+          <div class="item haveTo hide">
+            <div class="subtitle">手機號碼</div> 
+            <div class="answer">
+              <input type="text" value="" placeholder="您的手機號碼">
+            </div>
+            <div class="errorMessage hide">請輸入手機號碼</div>
+          </div>
+          
+          <div class="item haveTo hide">
+            <div class="subtitle">報名類型</div>
+            <div class="radio">
+              <label>
+                <input name="type" value="1" type="radio" /> 躺在床上用想像力實作
+              </label>
+              <label>
+                <input name="type" value="2" type="radio" />
+                  趴在地上滑手機找現成的
+              </label>
+            </div>            
+            <div class="errorMessage">請輸入報名類型</div>
+          </div>
+
+          <div class="item haveTo hide">
+            <div class="subtitle">怎麼知道這個活動的？</div> 
+            <div class="answer">
+              <input type="text" value="" placeholder="您的回答">
+            </div>
+            <div class="errorMessage">請輸入怎麼知道這個活動的</div>
+          </div>
+        </div>
+
+        <div class="other">
+          <div class="item">
+            <div class="subtitle">
+              其他 
+            <div class="desc">對活動的一些建議</div>
+          </div> 
+            <div class="answer">
+              <input type="text"  placeholder="您的回答">
+            </div>
+          </div>
+        </div>
+
+        <input class="submit" type="submit">
+        <p class="desc">請勿透過表單送出您的密碼。</p>
+      </form>
+    </div>
+
+    <footer>
+      © 2020 © Copyright. All rights Reserved.
+    </footer>
+    <script>
+      document.querySelector('form'). 
+      addEventListener('submit', 
+        function(e){
+          e.preventDefault() 
+          console.log(e)
+          // 因為按 enter 也會 submit，所以一定要 preventDefault 來阻止預設事件
+          const answers = document.querySelectorAll('.required input[type=text]')
+          
+          let hasError = false
+          for(let i = 0; i < answers.length; i++) {
+            if(answers[i].value === ""){
+              answers[i].parentNode.parentNode.classList.remove('hide')
+              hasError = true
+            }else {
+              answers[i].parentNode.parentNode.classList.add('hide')
+            }
+          }
+          const radios = document.querySelectorAll('input[type=radio]')
+          for(let i = 0; i < radios.length; i++) {
+            console.log(radios[i].parentNode.parentNode)
+            if(radios[i].checked){
+              radios[i].parentNode.parentNode.parentNode.classList.add('hide')
+              return
+            }else {
+              radios[i].parentNode.parentNode.parentNode.classList.remove('hide')
+
+            }
+          }
+
+
+
+      })
+    </script>
+  </body>
+</html>
