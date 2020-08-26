@@ -1,6 +1,6 @@
 # Hw4:*簡答題*
 
-##1 什麼是 DOM？
+## 1 什麼是 DOM？
 
 在JavaScript 與瀏覽器的溝通上，有一個重要的角色叫做 DOM。
 文件物件模型（Document Object Model, DOM）簡單來說，就是把「Document」轉換成「Object」的東西。
@@ -9,7 +9,7 @@ Document 即是在 html 中寫下的，當把這個結構各個拆解，如下�
 
 ![取自維基百科](https://i.imgur.com/R3ubxco.png)
 
-##2 事件傳遞機制的順序是什麼；什麼是冒泡，什麼又是捕獲？
+## 2 事件傳遞機制的順序是什麼；什麼是冒泡，什麼又是捕獲？
 
 事件傳遞依序定義為三個階段:
 
@@ -37,7 +37,7 @@ function addEvent(className) {
 }
 ```
 
-##3 什麼是 event delegation，為什麼我們需要它？
+## 3 什麼是 event delegation，為什麼我們需要它？
 
 當新增的按鈕數量越來越龐大，這個迴圈就要幫每個按鈕都新增一個監聽器，而且 callback function 的內容都很相近，那不是非常的沒有效率？啊如果我們是要用 appendChild 之類的動態新增元素，要怎麼加上 eventListener？
 
@@ -45,7 +45,7 @@ function addEvent(className) {
 
 這種方式就是 event delegation （事件代理）。
 
-##4 event.preventDefault() 跟 event.stopPropagation() 差在哪裡，可以舉個範例嗎？
+## 4 event.preventDefault() 跟 event.stopPropagation() 差在哪裡，可以舉個範例嗎？
 
 ### preventDefault
 
