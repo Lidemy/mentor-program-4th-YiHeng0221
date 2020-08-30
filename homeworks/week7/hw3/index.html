@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Todo List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <style>
+      body {
+        font-family: 'Quicksand', "Microsoft JhengHei", sans-serif;
+      }
+
+      /*本體*/
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+        max-width: 645px;
+        background: #f6f4e6;
+        margin: 10% auto;
+        box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+        padding: 10px 10px;
+        color: #776d8a;
+
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 600px;
+      }
+
+
+      /*標題*/
+      .list__title {
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+      .list__nail {
+        margin: 10px;
+        width:20px;
+        height:20px;
+        border: #dbe3e5 solid;
+        border-radius: 100%;
+        background-color: #dbe3e5;
+        box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+
+
+      /*輸入*/
+
+
+      .list__enter input{
+        border opacity: 100%;
+        text-align: center;
+        width: 100%;
+        background: #f6f4e6;
+        padding: 10px 10px;
+        color: #776d8a;
+        display: block;
+        border: none;
+        margin-bottom: 35px;
+        transition: all 0.3s;
+        outline: none;
+      }
+
+      .list__enter input::placeholder {
+        color: #776d8a;
+        opacity: 50%;
+      }
+
+      .list__enter input:hover {
+        color: #776d8a;
+        background: #e8ded2;
+        opacity: 50%;
+      }
+
+      .list__enter input: focus {
+        text-align: center;
+        width: 100%;
+        background: #f6f4e6;
+        padding: 10px 10px;
+        color: #776d8a;
+        display: block;
+        margin-bottom: 35px;  
+        border-bottom: #776d8a solid 1px;
+      }
+
+
+      /*未完成內容*/
+      .list__content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .list__item {
+        position: relative;
+        padding: 12px 24px;
+        font-size: 20px;
+        transition: all 0.2s;
+      }
+
+      .list__item + .list__item  {
+        margin-top: 10px;
+      }
+
+      .list__text {
+        position: relative;
+        display: inline-block;
+        margin: 10px 0;
+        margin-left: 20px;
+        font-size: 16px;
+      }
+
+      .list__item:hover {
+        background-color: #d9c6a5;
+      }
+
+      /*完成內容*/
+
+      .finished {
+        opacity: 50%;
+      }
+
+      .finished .list__text::after {
+        position: relative;
+        content: '';
+        top: -7px;
+        left: -5%;
+        display: block;
+        width: 110%;
+        border-bottom: 1px solid #776d8a;   
+        opacity: inherit;   
+      }
+
+
+
+      /*按鈕*/
+
+      .list__btn__check {
+        position: relative;
+        display: inline-block;
+        background: #f6f4e6;
+        color: #776d8a 2px;
+        width: 15px;
+        height: 15px;
+        transition: all 0.2s;
+      }
+
+      .list__btn__check:hover {
+        cursor: pointer;
+      }
+
+      .list__btn__check: checked {
+        background: #f6f4e6;
+        width: 15px;
+        height: 15px;
+      }
+
+      .list__btn__delete {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+      }
+
+      .list__btn__delete::after { 
+        font-size: 25px;
+        content: "\00D7";
+        color: #776d8a;
+        text-align: center;
+      }
+
+      .list__btn__delete:hover { 
+        opacity: 50%;
+        cursor: pointer;
+      }
+
+    
+
+
+
+    </style>  
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="list">
+        <div class="list__title">
+          <div class="list__nail"></div>
+          <h1>Todo List</h1>
+          <div class="list__nail"></div>
+        </div>
+
+        <div class="list__enter">
+          <input id="list_value" type="text" name="" placeholder="add something to do here?">
+        </div>
+        <div class="list__enter__line"></div>
+
+
+        <div class="list__content">
+
+          <div class="list__item">
+            <input class="list__btn__check" type="checkbox" />
+            <p class="list__text">todo</p>
+            <div class="list__btn__delete"></div>
+          </div>
+
+          <div class="list__item finished">
+            <input class="list__btn__check" type="checkbox" checked/>
+            <p class="list__text">todo</p>
+            <div class="list__btn__delete"></div>
+          </div>
+
+          <div class="list__item finished">
+            <input class="list__btn__check" type="checkbox" checked/>
+            <p class="list__text">todo</p>
+            <div class="list__btn__delete"></div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <script>
+
+      const addList = document.getElementById("list_value");
+      addList.addEventListener("keyup",function(e){
+        if (e.key === "Enter") {
+          add(addList.value)
+        }
+      })
+      function add(value){
+        const ListContent = document.querySelector(".list__content");
+        // 選擇上一層元素
+        const newList = document.createElement("div");
+        // 新增元素
+        newList.classList.add("list__item")
+        // 新增元素的 class
+        newList.innerHTML = `
+        <input class="list__btn__check" type="checkbox" />
+        <p class="list__text">${escapeHtml(value)}</p>
+        <div class="list__btn__delete"></div>`
+        // 新增元素中的內容
+        document.querySelector(".list__content").appendChild(newList)
+        // 加到上一層元素裡面
+        document.getElementById("list_value").value = '' 
+        // 清空輸入欄
+      }
+
+
+      const List = document.querySelector(".list__content").
+      // 因跑程式時 .list__btn__delete尚未出現，藉事件代理方式將 addEventListener 套在 .list__content 上
+      addEventListener("click", (e) => {
+        const { target } = e;
+        if(target.classList.contains("list__btn__delete")) {
+          target.parentNode.remove();
+          return
+        }
+        // delete list
+
+        if(target.classList.contains("list__btn__check") && target.checked){
+          target.parentNode.classList.add("finished");
+          return
+        }
+        // finished the list
+
+        if(target.classList.contains("list__btn__check") && !target.checked){
+          target.parentNode.classList.remove("finished");
+          return
+        }
+        // unfinished the list
+
+      })
+
+      function escapeHtml(unsafe) {
+        return unsafe
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+      // 跳脫字元，用來避免 xss injection or sql injection 等等利用特殊字元的攻擊。
+
+    </script>
+  </body>
+</html>
