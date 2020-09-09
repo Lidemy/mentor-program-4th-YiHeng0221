@@ -1,0 +1,164 @@
+html, body {
+  margin: 0;
+  line-height: 1.5;
+  background: linear-gradient(to top, #cbb4d4, #20002c);
+}
+
+.wrapper {
+	max-width: 1440px;
+  margin: 0 auto;
+  padding: 50px 0px;
+  text-align: center;
+  color: white;
+  position: relative;
+  background-size: 100% 100%;
+}
+
+/*navbar*/
+.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+
+.navbar .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+  background: #9146FF;
+  
+  padding: 0px 20px;
+}
+
+.navbar__site-name {
+  color: white;
+  font-size: 36px;
+}
+
+.navbar__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 18px;
+}
+
+.navbar__list li {
+  margin-left: 12px;
+  border-radius: 8px;
+  transition: background 0.1s;
+  cursor: pointer;
+}
+
+.navbar__list li.active, .navbar__list li:hover {
+  background: #ab75f9;
+}
+
+.navbar__list li.active a,
+.navbar__list li:hover a {
+  color: black;
+}
+
+.navbar__list li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 12px 24px;
+}
+
+@media(max-width: 768px) {
+  .navbar .wrapper {
+    height: 120px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+  }
+
+  .navbar__site-name {
+    margin-top: 10px;
+  }
+
+  .navbar__list {
+    display: flex;
+    width: 100%;
+  }
+
+  .navbar__list li {
+    flex: 1;
+    margin-left: 0;
+    border-radius: 0;
+    text-align: center;
+  }
+}
+
+.streams {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/*Thumbnails*/
+
+.gameThumbnail {
+	width: 360px;
+	background: #393b44;
+	margin: 20px 20px;
+	cursor: pointer;
+	opacity: 0.9;
+	border-radius: 5px;
+	transition: all 0.2s;
+}
+
+.gameThumbnail:hover {
+	transform: scale(1.05); /*透過向量定義的方式來調整元素大小*/
+	filter: brightness(1.25); /*調整元素的亮度*/
+}
+
+.gameThumbnail > img {
+	width: 100%;
+	border-radius: 5px;
+}
+.thumbnail__Desc {
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+}
+.thumbnail__Avatar > img{
+	border-radius: 50px;
+	height: 70px;
+	margin-top: 0px
+}
+.thumbnail__Info {
+  margin-left: 5px;
+  text-align: left;
+  padding: 5px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.thumbnail__Title {
+	white-space: nowrap; /*要設定*/
+  overflow: hidden; /*要設定*/
+	text-overflow: ellipsis;
+	font-size: 20px;
+	width: 280px;
+}
+
+.emptyCard {
+	width: 360px;
+	opacity: 0;
+	cursor: unset;
+	margin: 20px 20px;
+}
+
+/*mainContent*/
+
+.gameInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	color: white;
+  padding-bottom: 50px;
+}
