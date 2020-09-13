@@ -51,7 +51,7 @@ function getNewBg(prize) {
       className: 'none',
       title: '銘謝惠顧',
     },
-  },
+  }
   const { className, title } = prizes[prize];
   changeBg.classList.add(`${className}`);
   changeBg.innerHTML =
