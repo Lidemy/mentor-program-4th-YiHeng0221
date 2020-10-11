@@ -1,0 +1,10 @@
+[01-Oct-2020 14:19:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/gk0bzeoh7dod/public_html/mtr04group1/YiHengWu/week9/utils.php:10
+Stack trace:
+#0 /home/gk0bzeoh7dod/public_html/mtr04group1/YiHengWu/week9/index.php(17): getUserFromUsername('allen')
+#1 {main}
+  thrown in /home/gk0bzeoh7dod/public_html/mtr04group1/YiHengWu/week9/utils.php on line 10
+[01-Oct-2020 14:19:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/gk0bzeoh7dod/public_html/mtr04group1/YiHengWu/week9/utils.php:10
+Stack trace:
+#0 /home/gk0bzeoh7dod/public_html/mtr04group1/YiHengWu/week9/index.php(17): getUserFromUsername('allen')
+#1 {main}
+  thrown in /home/gk0bzeoh7dod/public_html/mtr04group1/YiHengWu/week9/utils.php on line 10
