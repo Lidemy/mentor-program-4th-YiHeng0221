@@ -1,0 +1,340 @@
+@import '_variables';
+
+// animation
+@mixin anim($name, $duration, $function, $delay, $count, $direction) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $function;
+  animation-delay: $delay;
+  animation-iteration-count: $count;
+  animation-fill-mode: $direction;
+}
+@mixin keyframes($animationName) {
+  @keyframes #{$animationName} {
+      @content;
+  }
+}
+
+@include keyframes(moveIconToTop) {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+@include keyframes(showWords) {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@mixin moveIconToTop {
+  @include anim(moveIconToTop, 0.3s, linear, 0s, 1, forwards);
+}
+@mixin showWords {
+  @include anim(showWords, 0.3s, linear, 0s, 1, forwards);
+}
+
+// html
+html {
+  height: 100%;
+  font-family: "Microsoft JhengHei";
+}
+body {
+  min-height: 100%;
+  @extend %colum-jc-start;
+  background: $light;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+// navbar
+.nav {
+  &bar {
+    @extend %row-jc-sb;
+    height: 100px;
+    padding: 30px 30px;
+    background: $light;
+    width: 100%;
+  }
+  &_title {
+    @extend %title;
+    color: $dark;
+  }
+  
+  &_btn {
+    margin: 10px 10px;
+    padding: 10px 10px;
+    border-style: none;
+    background: $light;
+    border-radius: 5px;
+    color: $dark;
+    @extend %regular;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  
+  &-right .nav_btn:hover {
+    background: $dark;
+    color: $light;
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  &-left {
+    @extend %row-jc-sb;
+    .left {
+      &_btn {
+        padding: 0;
+        text-align: center;
+        p {
+          opacity: 0;
+        }
+        i:hover {
+          @include moveIconToTop;
+          padding: 0;
+          p{
+            @include showWords;
+          }
+        }
+      }
+    }
+  }
+}
+
+// banner 
+.banner {
+  background-image: linear-gradient(to top, $dark, #434343);;
+  color: $light;
+  text-align: center;
+  width: 100%;
+  height: 241px;
+}
+// article
+.wrap {
+  flex: 1;
+  min-width: 645px;
+  max-width: 700px;
+  background: $light;
+  margin: auto;
+  margin-top: -5%;
+  border-radius: 5px;
+  padding: 10px 10px;
+}
+
+.article {
+  &_body {
+    @extend %colum-jc-start;
+    min-width: 645px;
+    margin-bottom: 20px;
+    border: $dark 1px solid;
+    border-radius: 5px;
+    box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+    padding: 10px 30px;
+    color: $dark;
+  }
+
+  &_content_at_body {
+    max-height: 20em;
+    overflow: hidden;
+  }
+
+  &_header {
+    @extend %row-jc-sb;
+  }
+  &_title {
+    @extend %large;
+    line-height: 1.8em;
+    color: $dark;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+
+  // article header
+  &_editor {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    align-items: center;
+    a {
+      font-size: 1.3em;
+      transition: transform 0.3s;
+      text-decoration: none;
+      i:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &_edit {
+    text-decoration: none;
+    color: $success;
+  }
+
+  &_remove {
+    color: $danger;
+  }
+
+  &_title {
+    width: 80%;
+  }
+
+  // article infomations
+
+  &_info {
+    background: $dark;
+    color: $light;
+    margin-bottom: 10px;
+    &-timeStamp, &-classify{
+      margin: 0 20px;
+    }
+  }
+
+  &_readMore {
+    @extend %regular;
+    color: $dark;
+    transition: all 0.2s;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+    &:hover {
+      background: $dark;
+      cursor: pointer;
+      color: $light;
+    }
+  }
+
+  // classify
+  &_classify {
+    width: 645px;
+  }
+
+  // textarea
+  &_textarea {
+    @extend %colum-jc-c;
+    padding: 20px 20px;
+    background: $light;
+    max-width: 645px;
+    box-shadow: 1px 1px 5px $dark;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    textarea{
+      width: 100%; 
+      padding: 10px;
+      border: 1px solid $primary;
+      box-sizing: border-box; 
+      border-radius: 5px;
+      background: $light;
+      transform: all 0.3s linear;
+      :focus{
+        outline-style: none;
+        background: $light;
+      }
+    }
+  }
+
+  // pagenator
+  &_pages {
+    text-align: center;
+    width: 100%;
+  }
+
+  &_page-number {
+    text-decoration: none;
+    line-height: 1.8em;
+    color: $dark;
+    border-bottom: 0.1em solid $primary;
+    transition: background-color .2s ease-in-out;
+    margin-right: 10px;
+    :hover {
+      background-size: 100% 100%;
+      background-color: $primary;
+      cursor: pointer;
+    }
+    .the_page {
+      line-height: 1.8em;
+      color: $dark;
+      margin-right: 10px;
+    }
+  }
+}
+
+// login 
+.login {
+  margin: 40px;
+  input {
+    @extend %regular;
+    outline-style: none;
+    border-style: none;
+    border-radius: 3px;
+    background: $light;
+    padding: 2px;
+  }
+}
+
+
+// other btn
+
+.btn {
+  @extend %regular;
+  margin-top: 30px; 
+  padding: 10px 30px;
+  background: $light;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid;
+  color: $dark;
+  transition: all 0.3s;
+  &:hover {
+    background: $dark;
+    color: $light;
+    cursor: pointer;
+  }
+}
+
+.add_article {
+  @extend %colum-jc-c;
+  min-width: 500px;
+  padding: 10px;  
+  input{
+    margin: 20px;
+  }
+  textarea {
+    height: 30em;
+    margin: 20px;
+  }
+}
+
+// select 
+.classify_select {
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+// CKEditor
+.ck-editor__editable_inline {
+  min-height: 400px;
+}
+ 
+// footer 
+.footer {
+  align-self: flex-end;
+  text-align: center;
+  width: 100%;
+  background-color: $dark;
+  color: $light;
+  @extend %small;
+}

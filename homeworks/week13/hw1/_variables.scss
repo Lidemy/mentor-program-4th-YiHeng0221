@@ -1,0 +1,54 @@
+
+// color
+$primary: #c2dffb;
+$success: #a0c1b8;
+$danger: #b83b5e;
+$light: #fbf0f0;
+$dark: #7c7575;
+
+// font set:
+%title {
+  font-size: 2em;
+  font-weight: bolder;
+}
+%large {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+}
+%regular {
+  font-size: 1em;
+  text-decoration: none;
+}
+%small {
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+
+// layout for flex
+%colum-jc-start {
+  display: flex;
+  flex-direction: column;
+}
+
+%colum-jc-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+%row-jc-sa {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+%row-jc-sb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+

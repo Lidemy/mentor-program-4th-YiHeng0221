@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twitch Top Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./dist/main.js" defer></script>
+    <!-- defer 為推遲，避免出現先執行 JavaScript 才執行 html 的狀況。 -->
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="wrapper">
+        <div class="navbar__site-name">
+          Twitch Top Games
+        </div>
+        <ul class="navbar__list" />
+      </div>
+    </nav>
+
+    <div class="wrapper">
+    	<div class="content">
+    	  <div class="gameInfo">
+    	  	<h1 class="gameTitle" />
+    	  	<h2 class="gameDesc">Top 20 popular live streams sorted by current viewers</h2>
+    	  </div>
+    	</div>
+
+      <section class="streams" />
+    </div>
+
+  </body>
+</html>
